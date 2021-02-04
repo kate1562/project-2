@@ -13,7 +13,7 @@ export default function Cocktails() {
     axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=Cocktail_glass')
       .then(({ data }) => {
         updateCocktails(data.drinks)
-        console.log(data.drinks)
+        // console.log(data.drinks)
         getCocktail(data.drinks)
       })
   }, [])
@@ -30,12 +30,8 @@ export default function Cocktails() {
           updateAllCocktails(array)
         })
     })
-    console.log(tempArray)
-    // updateAllCocktails(tempArray)
     updateLoading(false)
   }
-
-  console.log('this is an array of drinks', allCocktails)
   
   if (loading) {
     return <h1>hello</h1>
@@ -43,9 +39,7 @@ export default function Cocktails() {
   }
 
   return <div>
-    {console.log(allCocktails[0])}
     {allCocktails.map((cocktail, index) => {
-      // console.log(cocktail.idDrink)
 
       return <div key={index}>
         <Link
