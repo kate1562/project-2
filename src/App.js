@@ -7,24 +7,23 @@ import Navbar from './components/Navbar'
 import RandomCocktail from './components/RandomCocktail'
 import Cocktails from './components/Cocktails'
 import Cocktail from './components/Cocktail'
+import Home from './components/Home'
+
 // ? Styles
-// import 'bulma'
+import 'bulma'
 import './styles/style.scss'
 
 const App = () => {
   return <BrowserRouter>
     <Navbar />
     <Switch>
-      <Route exact path="/project-2" component={Home}/>
-      <Route exact path="/project-2/cocktailgenerator" component={RandomCocktail}/>
-      <Route exact path="/project-2/allcocktails" component={Cocktails}/>
-      <Route exact path="/project-2/cocktailId" component={Cocktail}/>
+      <Route exact path="/project-2" component={Home} />
+      <Route exact path="/project-2/cocktailgenerator" component={RandomCocktail} />
+      <Route exact path="/project-2/allcocktails" component={Cocktails} />
+      <Route exact path="/project-2/allCocktails/:cocktailId" component={Cocktail} />
     </Switch>
   </BrowserRouter>
 }
-  
-const Home = () => {
-  return <h1>Hello world</h1>
-}
+
 
 export default App

@@ -13,7 +13,6 @@ export default function Navbar() {
       <li>
         <Link to={'/project-2/allcocktails'}>All Cocktails</Link>
       </li>
-
     </ul>
   </div>
 }
