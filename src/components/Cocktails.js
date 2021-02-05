@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import RingLoader from 'react-spinners/RingLoader'
+import Navbar from './Navbar'
 
 export default function Cocktails() {
   const [cocktails, updateCocktails] = useState([])
@@ -31,96 +32,93 @@ export default function Cocktails() {
     updateLoading(false)
   }
 
- 
-
   if (allCocktails.length < 100) {
-    return <RingLoader loading={loading} size={100} />
-    // add in a loader thing
+    return <div className="loader">
+      <RingLoader loading={loading} size={100} />
+    </div>
   }
-
-  //button with an onclick which calls a function
-  //take the cocktails array and create a random index from length
-  //take this index and use it to access a random cocktail in the array  
-  //function needs to pass the random cocktaiil to the new linked page (as a prop)
-  //we render the prop cocktail in jsx on the randomcocktail page 
-  console.log(allCocktails)
 
   function goToRandom() {
     const generator = Math.floor(Math.random() * 99)
     const yourRandomCocktail = allCocktails[generator]
     return yourRandomCocktail
   }
-  // goToRandom()
+
   function filterCocktails() {
     return allCocktails.filter(cocktail => {
-      return (preference === 'All' || cocktail.strIngredient1  === preference || cocktail.strAlcoholic === preference)
+      return (preference === 'All' || cocktail.strIngredient1 === preference || cocktail.strAlcoholic === preference)
     })
   }
 
   const randomCocktail = goToRandom()
-  // console.log(randomCocktail)
-  return <div>
 
+  return <section className="allText">
+    <Navbar />
     <div>
-      <Link
-        key="randombutton"
-        to={{
-          pathname: '/project-2/cocktailgenerator',
-          state: randomCocktail 
-        }}
-      >
-        <button disabled = {allCocktails.length < 100} onClick={() => goToRandom()}>Generate a random cocktail</button>
-      </Link>
-      <select onChange={(event) => updatePreference(event.target.value)}>
-        <option>All</option>
-        <option>Vodka</option>
-        <option>Gin</option>
-        <option>Rum</option>
-        <option>Sweet Vermouth</option>
-        <option>Tequila</option>
-        <option>Scotch</option>
-        <option>Brandy</option>
-        <option>Amaretto</option>
-        <option>Non alcoholic</option>
-      </select>
-    </div>
-
-
-    return <div className="section">
       <div className="container">
-        <div className="columns is-multiline is-mobile">
-          {filterCocktails().map((cocktail, index) => {
-            return <div key={index} className="column is-one-fifth-desktop is-half-tablet is-full-mobile">
-              <Link key={cocktail.idDrink} to={{
-                pathname: `/project-2/allCocktails/${cocktail.idDrink}`,
-                state: { cocktail }
+        <div className="columns">
+          <div className="column">
+            <Link
+              key="randombutton"
+              to={{
+                pathname: '/project-2/cocktailgenerator',
+                state: randomCocktail
               }}>
-                <div className="card">
-                  <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <h2 className="title is-5 is-centered">{cocktail.strDrink}</h2>
+              <button className="button is-rounded" disabled={allCocktails.length < 100} onClick={() => goToRandom()}>Generate a random cocktail</button>
+            </Link>
+          </div>
+          <div className="column">
+            <p>Filter by main ingredient: </p>
+            <select onChange={(event) => updatePreference(event.target.value)}>
+              <option>All</option>
+              <option>Vodka</option>
+              <option>Gin</option>
+              <option>Rum</option>
+              <option>Sweet Vermouth</option>
+              <option>Tequila</option>
+              <option>Scotch</option>
+              <option>Brandy</option>
+              <option>Amaretto</option>
+              <option>Non alcoholic</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="container">
+          <div className="columns is-multiline is-mobile">
+            {filterCocktails().map((cocktail, index) => {
+              return <div key={index} className="column is-one-fifth-desktop is-half-tablet is-full-mobile">
+                <Link key={cocktail.idDrink} to={{
+                  pathname: `/project-2/allCocktails/${cocktail.idDrink}`,
+                  state: { cocktail }
+                }}>
+                  <div className="card">
+                    <div className="card-content">
+                      <div className="media">
+                        <div className="media-content">
+                          <h2 className="title is-6 is-centered">
+                            {cocktail.strDrink.length >= 20
+                              ? cocktail.strDrink.slice(0, 10) + '...'
+                              : cocktail.strDrink
+                            }
+                          </h2>
+                        </div>
                       </div>
                     </div>
+                    <div className="card-image">
+                      <figure className="image is 4by3">
+                        <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+                      </figure>
+                    </div>
                   </div>
-                  <div className="card-image">
-                    <figure className="image is 4by3">
-                      <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-                    </figure>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          })}
+                </Link>
+              </div>
+            })}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-
+  </section>
 }
-
-
-
-
-

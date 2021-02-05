@@ -2,7 +2,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 // ? Components
-import Navbar from './components/Navbar'
+
 // ? Routes
 import RandomCocktail from './components/RandomCocktail'
 import Cocktails from './components/Cocktails'
@@ -15,7 +15,7 @@ import './styles/style.scss'
 
 const App = () => {
   return <BrowserRouter>
-    <Navbar />
+
     <Switch>
       <Route exact path="/project-2" component={Home} />
       <Route exact path="/project-2/cocktailgenerator" component={RandomCocktail} />

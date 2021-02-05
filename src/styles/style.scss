@@ -1,4 +1,69 @@
+// import Google font
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Montserrat:wght@500&display=swap');
 
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+$grey-dark: $brown;
+$light: $beige-light;
+// $primary: 
+$link: $purple;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+.button {
+  background-color: #ff9a44;
+}
+
+.hero {
+  background-color: #923cb5;
+  background-image: linear-gradient(147deg, #fc6076 0%, #ff9a44 74%);
+  font-family: "Montserrat", sans-serif;
+}
+
+.subtitle {
+  font-family: 'Cardo', serif;
+}
+
+.navbar.is-primary{
+  margin-bottom: 20px;
+  background-image: linear-gradient(147deg, #fc6076 0%, #ff9a44 74%);
+}
+
+.container{
+  font-size: 17px;
+}
+
+.hometext {
+  display: flex;
+}
+
+.logo {
+  margin-left: 5px;
+  margin-top:5px;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  // transform: translate(-50%, -50%)
+}
+
+.individualCocktail {
+  background-color: #EFEEEB;
+}
+
+.allText {
+  background-color: #EFEEEB;
+}
+
+.ingredientFilter {
+  display: inline-block;
+}
 @import "../../node_modules/bulma/bulma.sass";
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
