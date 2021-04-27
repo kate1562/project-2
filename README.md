@@ -29,18 +29,18 @@ Users are able to view 100 cocktail recipes and filter by alcohol type. They can
 * We viewed endpoints using Insomnia REST client to inspect the data available and decided to create a cocktail recipe resource. 
 * Created a wireframe using Balsamiq to plan out the frontend:  
 <img width="487" alt="Screenshot 2021-04-21 at 18 02 10" src="https://user-images.githubusercontent.com/68645584/115592869-b2fe4080-a2cb-11eb-9f3b-7cf2f8130395.png">
-* Planned functionality in pseudocode
-* Set up react components (home, cocktails, random cocktail and individual cocktail pages)
-* Created routes with react-router-dom for site navigation 
-* Created the main functionality and logic with React Hooks
-* Styled using a mix of Bulma and CSS
+* Planned functionality in pseudocode.
+* Set up react components (home, cocktails, random cocktail and individual cocktail pages).
+* Created routes with react-router-dom for site navigation. 
+* Created the main functionality and logic with React Hooks.
+* Styled using a mix of Bulma and CSS.
 
 ### Data
 The API didn’t return enough results in the free version to render the information we wanted on the main cocktails page. It was only possible to retrieve 25 cocktails with full information, ideally we wanted more results in order to make good use of the dropdown filters. As a workaround, we used different endpoints to build up the information. 
 * An axios GET request returned 100 results containing a cocktail id, name and an image. 
 * To get a full data set including ingredients and instructions we created the getCocktail function which made another GET request for each of the 100 cocktails. The information was pushed to an array and saved in state. 
 * We were able to map over this now complete data to render cards for 100 cocktails in JSX. 
-* By wrapping each cocktail card in a Link we passed the complete cocktail through to the individual recipe page using state
+* By wrapping each cocktail card in a Link we passed the complete cocktail through to the individual recipe page using state.
 
 ```javascript
  useEffect(() => {
