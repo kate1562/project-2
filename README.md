@@ -1,6 +1,6 @@
 # InsBaration: cocktail collection
 ## Overview
-InsBARation was my second project completed as part of the GA Software Engineering Immersive course. The first application built with React, the program allows users to browse 100 cocktail recipes by base alcohol. We had 48 hours to pair program using a liveshare code editing extension and the driver/navigator technique to take turns in each role. An external API called cocktailsDB was used to seed our data.
+InsBARation was the second project completed as part of the GA Software Engineering Immersive course and my first application built with React. We had 48 hours to pair program using a liveshare code editing extension and the driver/navigator technique to take turns in each role. The program allows users to browse 100 cocktail recipes by base alcohol, or if they can't decide, gives them a random cocktail to try. We used the cocktailsDB API to seed our data and deployed on GitHub pages. 
 
 🔗 https://kate1562.github.io/project-2/ 
 
