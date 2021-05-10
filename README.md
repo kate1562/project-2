@@ -14,6 +14,7 @@ InsBARation was the second project completed as part of the GA Software Engineer
 * Npm
 * Bulma CSS Framework
 *  Cocktaildb API
+
 ## User Journey 
 ### Homepage 
 ![Screenshot 2021-04-06 at 16 37 16](https://user-images.githubusercontent.com/68645584/115591999-a2999600-a2ca-11eb-9b70-38549060b799.png)
