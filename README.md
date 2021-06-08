@@ -1,3 +1,6 @@
+### ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) 
+### General Assembly: Software Engineering Immersive
+
 # InsBaration: cocktail collection
 ## Overview
 InsBARation was the second project completed as part of the GA Software Engineering Immersive course and my first application built with React. We had 48 hours to pair program using a liveshare code editing extension and the driver/navigator technique to take turns in each role. The program allows users to browse 100 cocktail recipes by base alcohol, or if they can't decide, gives them a random cocktail to try. We used the cocktailsDB API to seed our data and deployed on GitHub pages. 
